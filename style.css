@@ -60,3 +60,9 @@ img{
     padding: 2rem;
     border-radius: 50%;
 }
+#counter{
+    height: auto;
+    width: auto;
+    margin-left: auto;
+    
+}
