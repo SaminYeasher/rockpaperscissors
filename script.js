@@ -1,5 +1,6 @@
 let userScore = 0;
 let compScore = 0;
+let drawScore = 0 ;
 
 let choices = document.querySelectorAll(".choice");
 let msg = document.querySelector("#msg");
@@ -17,11 +18,13 @@ const genCompChoice = () =>{
 };
 
 const drawGame = () =>{
-     
+    drawScore++; // Increment draw score
+    drawScorePara.innerText = drawScore; // Update draw score
         msg.innerText = "Game was Draw, Play again....";
         msg.style.backgroundColor = "yellow";
         msg.style.color = "black";
-       
+
+
        
 };
 
@@ -49,10 +52,10 @@ const playGame = (userChoice) =>{
     console.log("User choice =", userChoice);
     const comChoice = genCompChoice();
     console.log("Computer choice ", comChoice);
-    let drawScore ;
+
     if( userChoice === comChoice){
+    
         drawGame();
-        drawScore++;
     }
     else{
         let userWin = true;
@@ -63,7 +66,7 @@ const playGame = (userChoice) =>{
         } else{
             userWin = comChoice === "rock" ? false : true;
         }
-    showWinner(userWin,userChoice,comChoice);
+        showWinner(userWin,userChoice,comChoice);
     }
 };
 
