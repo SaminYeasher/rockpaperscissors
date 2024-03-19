@@ -1,16 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
     text-align: center;
     background-color: rgb(162, 103, 194);
 }
-h1{
+
+h1 {
     background-color: rgb(57, 183, 112);
     height: 5rem;
     line-height: 5rem;
-
 }
-.choice{
+
+.choice {
     height: 150px;
     width: 150px;
     border-radius: 25%;
@@ -18,40 +19,53 @@ h1{
     justify-content: center;
     align-items: center;
 }
-.choice:hover{
-    
+
+.choice:hover {
     cursor: pointer;
     background-color: rgb(230, 230, 230);
 }
-img{
+
+img {
     height: 100px;
     width: 100px;
     object-fit: cover;
     border-radius: 25%;
     display: flex;
 }
-.choices{
+
+.choices {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Add wrap to allow items to wrap to the next line */
     gap: 3rem;
     margin-top: 3rem;
 }
-.score-board{
+
+.score-board {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-top: 3rem;
+    gap: 2rem;
+}
+.score {
+    flex: 1; /* Make each score container flexible to adjust to screen width */
+    text-align: center; /* Center the text within each score container */
+}
+
+#user-score,
+#draw-score,
+#com-score {
+    font-size: 2rem;
+}
+
+.msg-container {
     margin-top: 5rem;
-    gap: 7rem;
 }
-#user-score,#draw-score, #com-score{
-    font-size: 4rem;
-}
-.msg-container{
-    margin-top: 5rem;
-}
-#msg{
+
+#msg {
     background-color: black;
     color: white;
     font-size: 2rem;
@@ -60,9 +74,36 @@ img{
     padding: 2rem;
     border-radius: 50%;
 }
-#counter{
+
+#counter {
     height: auto;
     width: auto;
     margin-left: auto;
-    
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .choice {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .choice {
+        height: 80px;
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .choice {
+        height: 60px;
+        width: 60px;
+    }
+
+    .score-board {
+        flex-direction: column;
+        gap: 3rem;
+    }
 }
